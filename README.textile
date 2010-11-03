@@ -9,8 +9,11 @@ h2. Installation
 <pre class="console">npm install express-extras</pre>
 
 h2. extras.fixIP
+
+<pre class="console">
     This middleware module attempts to normalize req.socket.remoteAddress
     when working with a proxy (like nginx).
+</pre>
 
 <pre class="console">
 app.use(extras.fixIP());
@@ -21,10 +24,13 @@ app.use(extras.fixIP([ 'x-forwarded-for', 'forwarded-for', 'x-cluster-ip' ]));
 
 
 h2. extras.throttle
-    Attempts to throttle requests based on the number of times a given resource is accessed.
-    Once the throttle is reached, a 403 is served to them for the "holdTime" (default 10 seconds)
-    127.0.0.1 is automatically whitelisted (for development, monit, nagios, etc..)
-    Probably should be used with/after extras.fixIP so that the users real IP is sent to the throttle.
+
+<pre class="console">
+Attempts to throttle requests based on the number of times a given resource is accessed.
+Once the throttle is reached, a 403 is served to them for the "holdTime" (default 10 seconds)
+127.0.0.1 is automatically whitelisted (for development, monit, nagios, etc..)
+Probably should be used with/after extras.fixIP so that the users real IP is sent to the throttle.
+</pre>
 
 <pre class="console">
 Use the defaults..
