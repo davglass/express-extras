@@ -16,7 +16,8 @@ when working with a proxy (like nginx).
 </pre>
 
 <pre class="console">
-app.configure(function(){
+var extras = require('express-extras');
+app.configure(function() {
 
     app.use(extras.fixIP());
     //Or
@@ -30,7 +31,6 @@ app.configure(function(){
 </pre>
 
 
-
 h2. extras.throttle
 
 <pre class="console">
@@ -41,7 +41,8 @@ Probably should be used with/after extras.fixIP so that the users real IP is sen
 </pre>
 
 <pre class="console">
-app.configure(function(){
+var extras = require('express-extras');
+app.configure(function() {
 
     Use the defaults..
     app.use(extras.throttle());
