@@ -11,14 +11,22 @@ h2. Installation
 h2. extras.fixIP
 
 <pre class="console">
-    This middleware module attempts to normalize req.socket.remoteAddress
-    when working with a proxy (like nginx).
+This middleware module attempts to normalize req.socket.remoteAddress
+when working with a proxy (like nginx).
 </pre>
 
 <pre class="console">
-app.use(extras.fixIP());
-Or
-app.use(extras.fixIP([ 'x-forwarded-for', 'forwarded-for', 'x-cluster-ip' ]));
+app.configure(function(){
+
+    app.use(extras.fixIP());
+    //Or
+    app.use(extras.fixIP([
+        'x-forwarded-for',
+        'forwarded-for',
+        'x-cluster-ip'
+    ]));
+
+});
 </pre>
 
 
@@ -33,19 +41,23 @@ Probably should be used with/after extras.fixIP so that the users real IP is sen
 </pre>
 
 <pre class="console">
-Use the defaults..
-app.use(extras.throttle());
+app.configure(function(){
 
-Or
-//The default config shown..
-app.use(extras.throttle({
-  urlCount: 5,
-  urlSec: 1,
-  holdTime: 10,
-  whitelist: {
-      '127.0.0.1': true
-  }
-}));
+    Use the defaults..
+    app.use(extras.throttle());
+
+    //Or supply a config object
+    //The default config shown..
+    app.use(extras.throttle({
+      urlCount: 5,
+      urlSec: 1,
+      holdTime: 10,
+      whitelist: {
+          '127.0.0.1': true
+      }
+    }));
+
+});
 </pre>
 
 
