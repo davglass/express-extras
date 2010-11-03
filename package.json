@@ -1,0 +1,29 @@
+{
+    "name": "express-extras",
+    "version": "0.1.0",
+    "description": "ExpressJS Helpers",
+    "author": "Dav Glass <davglass@gmail.com>",
+    "bugs": { "web" : "http://github.com/davglass/express-extras/issues" },
+    "os": ["darwin", "linux"],
+    "engines": {
+        "node" : ">=0.1.199"
+    },
+    "directories": {
+        "lib" : "lib"
+    },
+    "main": "./lib/express-extras",
+    "dependencies": {
+        "express": ">=1.0.0rc4",
+        "connect": ">=0.2.4"
+    },
+    "licenses":[
+        {
+            "type" : "BSD",
+            "url" : "http://github.com/davglass/express-extras/blob/master/LICENSE"
+        }
+    ],
+    "repository": {
+        "type":"git",
+        "url":"http://github.com/davglass/express-extras.git"
+    }
+}
