@@ -6,10 +6,7 @@
     "bugs": { "url" : "https://github.com/davglass/express-extras/issues" },
     "os": ["darwin", "linux"],
     "engines": {
-        "node" : ">=0.1.199"
-    },
-    "directories": {
-        "lib" : "lib"
+        "node" : ">=0.4.0"
     },
     "main": "./lib/express-extras",
     "dependencies": {
