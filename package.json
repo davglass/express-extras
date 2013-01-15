@@ -4,13 +4,22 @@
     "description": "ExpressJS Helpers",
     "author": "Dav Glass <davglass@gmail.com>",
     "bugs": { "url" : "https://github.com/davglass/express-extras/issues" },
-    "os": ["darwin", "linux"],
     "engines": {
         "node" : ">=0.4.0"
     },
     "main": "./lib/express-extras",
     "dependencies": {
         "express": "*"
+    },
+    "devDependencies": {
+        "yui-lint": "~0.1.1",
+        "jshint": "~0.9.0",
+        "istanbul": "~0.1.8",
+        "vows": "*" 
+    },
+    "scripts": {
+        "pretest": "jshint --config ./node_modules/yui-lint/jshint.json ./lib/",
+        "test": "istanbul cover --print both vows -- --spec ./tests/*.js"
     },
     "licenses":[
         {
