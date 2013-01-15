@@ -60,3 +60,7 @@ Probably should be used with/after extras.fixIP so that the users real IP is sen
     });
 
 
+Build Status
+------------
+
+[![Build Status](https://secure.travis-ci.org/davglass/express-extras.png?branch=master)](http://travis-ci.org/davglass/express-extras)
