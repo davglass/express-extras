@@ -117,6 +117,36 @@ var tests = {
                 assert.equal(req.ip, '5.5.5.5');
             });
         },
+        'should return a valid IP from a req object with multiple proxy headers': function(topic) {
+            var req = {
+                headers: {
+                    'x-forwarded-for': '2.2.2.2, 3.3.3.3, 4.4.4.4, 5.5.5.5'
+                },
+                socket: {
+                    remoteAddress: '10.10.10.10'
+                }
+            };
+            assert.isUndefined(req.ip);
+            var fn = topic();
+            fn(req, {}, function() {
+                assert.equal('2.2.2.2', req.ip);
+            });
+        },
+        'should return a valid IP from a req object with multiple bogus proxy headers': function(topic) {
+            var req = {
+                headers: {
+                    'x-forwarded-for': ', '
+                },
+                socket: {
+                    remoteAddress: '10.10.10.10'
+                }
+            };
+            assert.isUndefined(req.ip);
+            var fn = topic();
+            fn(req, {}, function() {
+                assert.equal('10.10.10.10', req.ip);
+            });
+        },
         'should not set req.ip if no ip found': function(topic) {
             var req = {
             };
