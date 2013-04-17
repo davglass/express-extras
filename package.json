@@ -1,6 +1,6 @@
 {
     "name": "express-extras",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "description": "ExpressJS Helpers",
     "author": "Dav Glass <davglass@gmail.com>",
     "bugs": { "url" : "https://github.com/davglass/express-extras/issues" },
