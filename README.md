@@ -54,7 +54,9 @@ Probably should be used with/after extras.fixIP so that the users real IP is sen
           holdTime: 10,
           whitelist: {
               '127.0.0.1': true
-          }
+          },
+          errorCode: 403,
+          errorHtml: '<html><title>403 Forbidden</title><body><h1>403 Forbidden</h1><p>Client denied by server configuration.</p></body></html>'
         }));
 
     });
