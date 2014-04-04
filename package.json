@@ -14,10 +14,10 @@
     "express": "*"
   },
   "devDependencies": {
-    "yui-lint": "~0.1.1",
+    "istanbul": "^0.2.7",
     "jshint": "~0.9.0",
-    "istanbul": "~0.1.8",
-    "vows": "*"
+    "vows": "*",
+    "yui-lint": "~0.1.1"
   },
   "scripts": {
     "pretest": "jshint --config ./node_modules/yui-lint/jshint.json ./lib/",
