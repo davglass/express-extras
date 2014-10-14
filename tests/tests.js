@@ -33,9 +33,12 @@ var tests = {
             };
             var responded = false;
             var res = {
-                send: function(html, code) {
-                    responded = true;
+                status: function(code) {
                     assert.equal(code, 403);
+                    return res;
+                },
+                send: function(html) {
+                    responded = true;
                     assert.equal(html, '<html><title>403 Forbidden</title><body><h1>403 Forbidden</h1><p>Client denied by server configuration.</p></body></html>');
                 }
             };
@@ -67,6 +70,9 @@ var tests = {
                 }
             };
             var res = {
+                status: function(code) {
+                    return res;
+                },
                 send: function(html, code) {
                     assert.isTrue(false);
                 }
